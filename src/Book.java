@@ -28,4 +28,28 @@ public class Book {
         }
         this.publicationYear = year;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Название: %s, %s, Год издания: %s", name, author, publicationYear);
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj.getClass() != this.getClass() || obj == null) {
+            return false;
+        }
+        Book book = (Book) obj;
+        boolean result;
+        result = this.name.equals(book.name) && this.author.equals(book.author);
+        result = this.publicationYear == book.publicationYear;
+        return result;
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(name, author, publicationYear);
+    }
 }
