@@ -43,8 +43,7 @@ public class Book {
         }
         Book book = (Book) obj;
         boolean result;
-        result = this.name.equals(book.name) && this.author.equals(book.author);
-        result = this.publicationYear == book.publicationYear;
+        result = this.name.equals(book.name) && this.author.equals(book.author) && this.publicationYear == book.publicationYear;
         return result;
     }
 
